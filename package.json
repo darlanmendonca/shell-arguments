@@ -1,0 +1,29 @@
+{
+  "name": "shell-arguments",
+  "version": "0.0.1",
+  "description": "Convert shell arguments passed to the npm, node, or nodemon, and convert this arguments to json",
+  "main": "index.coffee",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/darlanmendonca/shell-arguments.git"
+  },
+  "keywords": [
+    "shell",
+    "arguments",
+    "node",
+    "arguments",
+    "npm",
+    "arguments",
+    "nodemon",
+    "arguments"
+  ],
+  "author": "Darlan Mendonça",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/darlanmendonca/shell-arguments/issues"
+  },
+  "homepage": "https://github.com/darlanmendonca/shell-arguments"
+}
