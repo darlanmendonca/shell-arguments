@@ -26,7 +26,7 @@ If you want apply false, use
 node app.js -b=false --test="false"
 => {b: true, test: false}
 ```
-Note that the string with false value was converted to a boolean false, because this module converte primitive values.
+Note that the string with false value was converted to a boolean false, because this module convert primitive values.
 
 
 Too accept other values, like below:
