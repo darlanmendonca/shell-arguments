@@ -1,6 +1,6 @@
 # shell-arguments
 
-This module serialize the arguments passed to npm, node, or nodemon, and convert this arguments to json.
+This module serialize the arguments passed to the npm, node, or nodemon, and convert this arguments to json.
 
 ### install
 ```sh
