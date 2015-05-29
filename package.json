@@ -2,7 +2,7 @@
   "name": "shell-arguments",
   "version": "0.0.2",
   "description": "Convert shell arguments passed to the npm, node, or nodemon, and convert this arguments to json",
-  "main": "index.coffee",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

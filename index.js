@@ -1,46 +1,50 @@
 module.exports = (function () {
   'use Strict';
 
-  var arguments = process.argv;
-  var serializedArguments = {};
+  var arguments = process.argv.slice(2);
+  var jsonArguments = {};
 
-  for (var i = 2; i < arguments.length; i++) {
-    var arg = arguments[i];
+  var regs = {
+    flag: /--(.+)/,
+    shortFlag: /-(.+)/
+  };
 
-    // if argument have operator =
-    if (arg.indexOf('=') !== -1) {
-      arg = arg.match(/([^=]*)=(.*)/);
-      // remove --, or - from argument name
-      key = arg[1].replace(/\-{1,2}/, '');
-      // apply value for element, and parse to integer
-      serializedArguments[key] = parseInt(arg[2]) ? parseInt(arg[2]) : arg[2];
-      // or parse to boolean
-      serializedArguments[key] = serializedArguments[key] == 'true' ? true : serializedArguments[key] == 'false' ? false : serializedArguments[key];
+  arguments.forEach(function(arg, index, array) {
+    var key;
+    var value = true;
+
+    // has flag
+    if (regs.flag.test(arg)) {
+      key = arg.replace(regs.flag, '$1');
     } 
+    // has short flag
+    else if (regs.shortFlag.test(arg)) {
+      key = arg.replace(regs.shortFlag, '$1').split('');
+    } 
+    // has value
+    else if (regs.flag.test(array[index - 1])) {
+      key = array[index - 1].replace(regs.flag, '$1');
+      value = arg;
+    }
 
-    // if argument have prefix --
-    else if (arg.indexOf('--') == 0) {
-      key = arg.replace(/\-{1,2}/, '');
-      // if have value, apply value
-      if (arguments[i+1].indexOf('-') != 0) {
-        serializedArguments[key] = arguments[i+1];
-      }
-      // else apply true
+
+    // type cast to primitive values
+
+    if (key && value) {
+      // if has array (short flags)
+      if (typeof key === 'object' && key.length) {
+        key.forEach(function(key) {
+          jsonArguments[key] = value;
+        });
+      } 
+      // if has flag or value of flag
       else {
-        serializedArguments[key] = true;
+        jsonArguments[key] = value;
       }
     }
-
-    // if argumante have prefix -
-    else if (arg.indexOf('-') == 0) {
-      keys = arg.replace(/\-{1}/, '').split('');
-      for (index in keys) {
-        serializedArguments[keys[index]] = true;
-      }
-    }
-  }
+  });
   
-  
-  return serializedArguments;
+  console.log(jsonArguments);
+  // return jsonArguments;
 
 })();
