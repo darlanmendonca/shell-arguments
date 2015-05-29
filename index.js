@@ -28,9 +28,12 @@ module.exports = (function () {
     }
 
 
-    // type cast to primitive values
+    // type cast to number
+    value = !isNaN(value) ? Number(value) : value;
+    // or boolean
+    value = value === 'false' ? false : value === 'true' ? true : value;
 
-    if (key && value) {
+    if (key) {
       // if has array (short flags)
       if (typeof key === 'object' && key.length) {
         key.forEach(function(key) {
