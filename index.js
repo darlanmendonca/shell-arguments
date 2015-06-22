@@ -47,7 +47,7 @@ module.exports = (function () {
     }
   });
   
-  console.log(jsonArguments);
-  // return jsonArguments;
+  // console.log(jsonArguments);
+  return jsonArguments;
 
 })();
