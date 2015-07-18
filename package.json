@@ -1,10 +1,10 @@
 {
   "name": "shell-arguments",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Convert shell arguments passed to the npm, node, or nodemon, and convert this arguments to json",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --reporter spec tests.js"
   },
   "repository": {
     "type": "git",
@@ -17,7 +17,7 @@
     "npm arguments",
     "nodemon arguments"
   ],
-  "author": "Darlan Mendonça",
+  "author": "Darlan Mendonça <darlanmendonca@gmail.com> (https://github.com/darlanmendonca)",
   "bugs": {
     "url": "https://github.com/darlanmendonca/shell-arguments/issues"
   },

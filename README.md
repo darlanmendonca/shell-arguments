@@ -54,3 +54,13 @@ node app.js --output '/Desktop/test', --config="test"
 ```
 
 Enjoy!
+
+
+### Tests
+
+To run the test suite, first install the dependencies, then run npm test:
+
+```sh
+npm install
+npm test
+```
