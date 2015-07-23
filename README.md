@@ -57,10 +57,14 @@ Enjoy!
 
 
 ### Tests
-
-To run the test suite, first install the dependencies, then run npm test:
+I use mocha for tests, first install mocha has global
 
 ```sh
-npm install
+npm i -g mocha
+```
+
+Then run tests with:
+
+```sh
 npm test
 ```
