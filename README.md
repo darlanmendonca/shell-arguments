@@ -57,7 +57,7 @@ Enjoy!
 
 
 ### Tests
-I use mocha for tests, first install mocha has global
+I use mocha for tests, first install mocha as global
 
 ```sh
 npm i -g mocha
