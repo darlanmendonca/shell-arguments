@@ -50,7 +50,7 @@ node app.js -rpqs
 Apply value with =, or space:
 ```shell
 node app.js --output '/Desktop/test', --config="test"
-=> {output: '/Desktop/test', config: 'test'
+=> {output: '/Desktop/test', config: 'test'}
 ```
 
 Enjoy!
