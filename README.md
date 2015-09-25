@@ -57,10 +57,10 @@ Enjoy!
 
 
 ### Tests
-I use mocha for tests, first install mocha as global
+I use mocha for tests, to run, first install dependencies
 
 ```sh
-npm i -g mocha
+npm install
 ```
 
 Then run tests with:
