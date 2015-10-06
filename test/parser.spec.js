@@ -28,6 +28,11 @@ describe('long flags (--test, --env production)', function() {
       test2: true
     }, parser('node index.js --test=true --test2="true"'));
 
+    assert.deepEqual({
+      test: false,
+      test2: false
+    }, parser('node index.js --test=false --test2="false"'));
+
     assert.deepEqual({no: false}, parser('node index.js --no false'));
   });
 
