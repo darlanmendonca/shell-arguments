@@ -1,6 +1,6 @@
 {
   "name": "shell-arguments",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Convert shell arguments passed to the npm, node, or nodemon, and convert this arguments to json",
   "main": "index.js",
   "scripts": {

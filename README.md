@@ -1,6 +1,6 @@
 # shell-arguments
 
-This module serialize the arguments passed to the npm, node, or nodemon, and convert this arguments to json.
+This module serialize the arguments passed to the npm, node, nodemon, or pm2, and convert this arguments to json.
 
 ### install
 ```sh
@@ -37,7 +37,7 @@ node app.js -o '/Desktop/teste' --output="/Desktop/teste"
 
 Convert primitive values
 ```sh
-node app.js -port 8080 --numbers="2", --allow="false" --private="true"
+node app.js --port 8080 --numbers="2", --allow="false" --private="true"
 => {port: 8080, numbers: 2, allow: false, private: true}
 ```
 
@@ -49,7 +49,7 @@ node app.js -rpqs
 
 Apply value with =, or space:
 ```shell
-node app.js --output '/Desktop/test', --config="test"
+node app.js --output '/Desktop/test' --config="test"
 => {output: '/Desktop/test', config: 'test'}
 ```
 
