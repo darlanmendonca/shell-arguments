@@ -3,7 +3,7 @@ var parser = require('../parser');
 
 describe('short flags (-f, -abc)', function() {
   it('parse to true values', function () {
-    
+
     assert.deepEqual({f: true}, parser('node index.js -f'));
 
     assert.deepEqual({
