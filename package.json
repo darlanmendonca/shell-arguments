@@ -1,11 +1,10 @@
 {
   "name": "shell-arguments",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Convert shell arguments passed to the npm, node, or nodemon, and convert this arguments to json",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --reporter spec test",
-    "posttest": "istanbul cover _mocha -- -R spec"
+    "test": "istanbul cover _mocha -- --bail --reporter spec test"
   },
   "repository": {
     "type": "git",
