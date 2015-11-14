@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/darlanmendonca/shell-arguments.svg)](https://travis-ci.org/thebergamo/parsick) [![Coverage Status](https://coveralls.io/repos/darlanmendonca/shell-arguments/badge.svg?branch=master&service=github)](https://coveralls.io/github/darlanmendonca/shell-arguments?branch=master)
+
 # shell-arguments
 
 This module serialize the arguments passed to the npm, node, nodemon, or pm2, and convert this arguments to json.
