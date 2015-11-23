@@ -1,4 +1,6 @@
-[![Build Status](https://travis-ci.org/darlanmendonca/shell-arguments.svg)](https://travis-ci.org/thebergamo/parsick) [![Coverage Status](https://coveralls.io/repos/darlanmendonca/shell-arguments/badge.svg?branch=master&service=github)](https://coveralls.io/github/darlanmendonca/shell-arguments?branch=master)
+[![Build Status](https://travis-ci.org/darlanmendonca/shell-arguments.svg)](https://travis-ci.org/thebergamo/parsick) 
+[![Coverage Status](https://coveralls.io/repos/darlanmendonca/shell-arguments/badge.svg?branch=master&service=github)](https://coveralls.io/github/darlanmendonca/shell-arguments?branch=master)
+[![npm version](https://badge.fury.io/js/shell-arguments.svg)](https://badge.fury.io/js/shell-arguments)
 
 # shell-arguments
 
