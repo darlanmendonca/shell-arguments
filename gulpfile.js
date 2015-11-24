@@ -1,13 +1,13 @@
+'use strict';
+
 var gulp = require('gulp');
 var gutil = require('gulp-util');
 var jshint = require('gulp-jshint');
 var stylish = require('jshint-stylish');
 
 var scripts = [
-	'./gulpfile.js',
-	'./parser.js',
-	'./test/parser.spec.js',
-	'./index.js'
+	'./*.js',
+	'./test/**/*.js'
 ];
 
 gulp.task('jshint', function() {

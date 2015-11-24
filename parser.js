@@ -27,7 +27,6 @@ var setArgs = function(args) {
 };
 
 module.exports = function (args) {
-
   args = setArgs(args);
 
   var object = {};
