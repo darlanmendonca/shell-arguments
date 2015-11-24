@@ -4,7 +4,7 @@
 
 # shell-arguments
 
-This module serialize the arguments passed to the npm, node, nodemon, or pm2, and convert this arguments to json.
+This module serialize the arguments passed to the npm, node, nodemon, forever, or pm2, and convert this arguments to json.
 
 ### install
 ```sh
