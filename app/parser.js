@@ -3,11 +3,11 @@
 var util = require('util');
 
 var typeCast = function(value) {
-  // try cast to
-  var toNumber = value !== true && !isNaN(value) ? Number(value) : value;
-  var toBoolean = value === 'false' ? false : value === 'true' ? true : value;
-  value = toNumber;
-  value = toBoolean;
+  // try cast
+  // to number
+  value = value !== true && !isNaN(value) ? Number(value) : value;
+  // to boolean
+  value = value === 'false' ? false : value === 'true' ? true : value;
 
   return value;
 };

@@ -2,7 +2,8 @@
 
 set -e
 
-node node_modules/.bin/istanbul cover _mocha -- --reporter spec test
+node node_modules/.bin/istanbul cover _mocha \
+test/unit/*.js
 
 if [ ! -z "$EXPORT_COVERAGE" ]; then
   cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
