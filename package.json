@@ -30,9 +30,7 @@
     "gulp-util": "^3.0.6",
     "istanbul": "^0.4.0",
     "jshint-stylish": "^2.0.1",
-    "mocha": "^2.3.3"
-  },
-  "dependencies": {
+    "mocha": "^2.3.3",
     "coveralls": "^2.11.4",
     "istanbul": "^0.4.0"
   }
