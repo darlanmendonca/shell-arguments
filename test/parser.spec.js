@@ -2,7 +2,7 @@
 'use strict';
 
 var assert = require('assert');
-var parser = require('../parser');
+var parser = require('../app/parser.js');
 
 describe('short flags (-f, -abc)', function() {
   it('parse to true values', function () {

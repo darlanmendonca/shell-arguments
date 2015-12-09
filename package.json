@@ -2,9 +2,9 @@
   "name": "shell-arguments",
   "version": "1.1.4",
   "description": "Convert shell arguments passed to the npm, node, or nodemon, and convert this arguments to json",
-  "main": "index.js",
+  "main": "app/index.js",
   "scripts": {
-    "test": "shell-scripts/test"
+    "test": "scripts/test"
   },
   "repository": {
     "type": "git",
