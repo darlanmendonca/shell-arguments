@@ -78,5 +78,3 @@ npm test
 
 The MIT License (MIT)
 
-Copyright (c) 2015 Darlan Mendonça de Almeida
-
