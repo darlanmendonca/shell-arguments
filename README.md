@@ -6,7 +6,7 @@
 
 This module serialize the arguments passed to the npm, node, nodemon, forever, or pm2, and convert this arguments to json.
 
-### install
+### Install
 ```sh
 npm install --save shell-arguments
 ```
@@ -57,8 +57,6 @@ node app.js --output '/Desktop/test' --config="test"
 => {output: '/Desktop/test', config: 'test'}
 ```
 
-Enjoy!
-
 
 ### Tests
 I use mocha for tests, to run, first install dependencies
@@ -73,8 +71,4 @@ Then run tests with:
 npm test
 ```
 
-
-#### License
-
-The MIT License (MIT)
-
+Enjoy!
