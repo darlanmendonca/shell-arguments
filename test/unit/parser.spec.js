@@ -1,11 +1,14 @@
 /* globals describe, it */
 'use strict';
 
-var expect = require('chai').expect;
-var parser = require('../../app/parser.js');
+let expect = require('chai').expect;
+let parser = require('../../app/parser.js');
 
 describe('parser - unit tests', function() {
-	describe('short flags (-f, -abc)', function() {
+	describe('short flags (-f, -abc)', shortFlags);
+	describe('long flags (--test, --env production)', longFlags);
+
+	function shortFlags() {
 	  it('parse to true values', function () {
 	    expect(parser('node index.js -f'))
 	    .to.deep.equal({f: true});
@@ -17,9 +20,9 @@ describe('parser - unit tests', function() {
 	      c: true
 	    });
 	  });
-	});
+	}
 
-	describe('long flags (--test, --env production)', function() {
+	function longFlags() {
 	  it('parse to boolean values', function () {
 	    expect(parser('node index.js --test'))
 	    .to.deep.equal({test: true});
@@ -88,6 +91,6 @@ describe('parser - unit tests', function() {
 	      test: 'production'
 	    });
 	  });
-	});
+	}
 });
 

@@ -3,21 +3,15 @@
 module.exports = parser;
 
 function typeCast(value) {
-	let isNumber = value !== true && !isNaN(value);
-	let isFalse = value === 'false';
-	let isTrue = value === 'true';
+  var isNumber = value !== true && !isNaN(value);
+  var isFalse = value === 'false';
+  var isTrue = value === 'true';
 
   // to number
-  value = isNumber
-  	? Number(value)
-  	: value;
+  value = isNumber ? Number(value) : value;
 
   // to boolean
-  value = isFalse
-  	? false :
-  	isTrue
-  		? true
-  		: value;
+  value = isFalse ? false : isTrue ? true : value;
 
   return value;
 };
@@ -32,16 +26,15 @@ function setArgs(args) {
 
   return args;
 
-	function removeQuotes(value, index) {
-	  let arg = value.replace(/(\"|\')/g, '');
-	  args[index] = arg;
-	}
+  function removeQuotes(value, index) {
+    var arg = value.replace(/(\"|\')/g, '');
+    args[index] = arg;
+  }
 };
 
-
 function parser(args) {
-  let object = {};
-  let regs = {
+  var object = {};
+  var regs = {
     flag: /--(.+)/,
     flaghWithEqual: /--(.+)=(.+)/,
     shortFlag: /-(.+)/
@@ -53,16 +46,16 @@ function parser(args) {
   return object;
 
   function parse(arg, index, array) {
-    let key;
-    let value = true;
+    var key = void 0;
+    var value = true;
 
-    let isLongFlagWithEqual = regs.flaghWithEqual.test(arg);
-    let isLongFlag = regs.flag.test(arg);
-    let isShortFlag = regs.shortFlag.test(arg);
-    let isValue = regs.flag.test(array[index - 1]);
+    var isLongFlagWithEqual = regs.flaghWithEqual.test(arg);
+    var isLongFlag = regs.flag.test(arg);
+    var isShortFlag = regs.shortFlag.test(arg);
+    var isValue = regs.flag.test(array[index - 1]);
 
     if (isLongFlagWithEqual) {
-      let explode = arg.match(regs.flaghWithEqual);
+      var explode = arg.match(regs.flaghWithEqual);
       key = explode[1];
       value = explode[2];
     } else if (isLongFlag) {
@@ -79,16 +72,16 @@ function parser(args) {
     if (key) {
       // if has array (short flags)
       if (Array.isArray(key)) {
-        key.forEach(applyValue);
-
-        function applyValue(key) {
+        var applyValue = function applyValue(key) {
           object[key] = value;
-        }
+        };
+
+        key.forEach(applyValue);
       }
       // if has flag or value of flag
       else {
-        object[key] = value;
-      }
+          object[key] = value;
+        }
     }
   }
 };

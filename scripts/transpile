@@ -1,0 +1,6 @@
+#!/bin/bash
+
+set -e
+
+babel app/parser.js --out-file app/parser.es5.js;
+babel test/unit/parser.spec.js --out-file test/unit/parser.spec.es5.js;
