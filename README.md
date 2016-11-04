@@ -16,6 +16,7 @@ and in your .js file
 
 ```js
 import arguments from 'shell-arguments';
+
 console.log(arguments);
 ```
 
