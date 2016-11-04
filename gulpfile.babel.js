@@ -1,12 +1,12 @@
-const gulp = require('gulp');
-const gutil = require('gulp-util');
-const eslint = require('gulp-eslint');
+import gulp from 'gulp';
+import gutil from 'gulp-util';
+import eslint from 'gulp-eslint';
 
 const scripts = [
   './app/index.js',
   './app/parser.js',
   './test/unit/parser.spec.js',
-  './gulpfile.js',
+  './gulpfile.babel.js',
 ];
 
 gulp.task('lintTask', function lintTask() {
