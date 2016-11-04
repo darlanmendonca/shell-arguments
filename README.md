@@ -15,7 +15,7 @@ npm install --save shell-arguments
 and in your .js file
 
 ```js
-var arguments = require('shell-arguments');
+import arguments from 'shell-arguments';
 console.log(arguments);
 ```
 
