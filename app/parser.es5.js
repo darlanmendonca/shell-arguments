@@ -77,11 +77,10 @@ function parser(args) {
         };
 
         key.forEach(applyValue);
+      } else {
+        // if has flag or value of flag
+        object[key] = value;
       }
-      // if has flag or value of flag
-      else {
-          object[key] = value;
-        }
     }
   }
 };

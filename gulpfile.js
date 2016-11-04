@@ -1,30 +1,23 @@
-'use strict';
+const gulp = require('gulp');
+const gutil = require('gulp-util');
+const eslint = require('gulp-eslint');
 
-// git commit -m 'fix multiple typecasts, and use chai to assertions'
-
-var gulp = require('gulp');
-var gutil = require('gulp-util');
-
-var scripts = [
-	'./app/*.js',
-	'./test/**/*.js'
+const scripts = [
+  './app/index.js',
+  './app/parser.js',
+  './test/unit/parser.spec.js',
+  './gulpfile.js',
 ];
 
-gulp.task('jshint', function() {
-	let jshint = require('gulp-jshint');
-	let stylish = require('jshint-stylish');
-
-	let beep = function() {
-		gutil.beep();
-	};
-
-	gulp
-		.src(scripts)
-		.pipe(jshint())
-		.pipe(jshint.reporter(beep))
-		.pipe(jshint.reporter(stylish));
+gulp.task('lintTask', function lintTask() {
+  return gulp
+    .src(scripts)
+    .pipe(eslint())
+    .pipe(eslint.format())
+    .pipe(eslint.failAfterError())
+    .on('error', () => gutil.beep());
 });
 
-gulp.task('lint', ['jshint'], function() {
-	gulp.watch(scripts, ['jshint']);
+gulp.task('lint', ['lintTask'], function() {
+  gulp.watch(scripts, ['lintTask']);
 });

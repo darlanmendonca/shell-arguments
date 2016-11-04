@@ -1,12 +1,9 @@
-/* globals describe, it */
-'use strict';
-
 let expect = require('chai').expect;
 let parser = require('../../app/parser.es5.js');
 
 describe('parser - unit tests', function() {
-	describe('short flags (-f, -abc)', shortFlags);
-	describe('long flags (--test, --env production)', longFlags);
+  describe('short flags (-f, -abc)', shortFlags);
+  describe('long flags (--test, --env production)', longFlags);
 });
 
 function shortFlags() {
@@ -18,7 +15,7 @@ function shortFlags() {
     .to.deep.equal({
       a: true,
       b: true,
-      c: true
+      c: true,
     });
   });
 }
@@ -31,19 +28,19 @@ function longFlags() {
     expect(parser('node index.js --test true --test2'))
     .to.deep.equal({
       test: true,
-      test2: true
+      test2: true,
     });
 
     expect(parser('node index.js --test=true --test2="true"'))
     .to.deep.equal({
       test: true,
-      test2: true
+      test2: true,
     });
 
     expect(parser('node index.js --test=false --test2="false"'))
     .to.deep.equal({
       test: false,
-      test2: false
+      test2: false,
     });
 
     expect(parser('node index.js --no false'))
@@ -51,45 +48,45 @@ function longFlags() {
   });
 
   it('parse to number values', function () {
-  	expect(parser('node index.js --number 3 --n 2'))
-  	.to.deep.equal({
+    expect(parser('node index.js --number 3 --n 2'))
+    .to.deep.equal({
       number: 3,
-      n: 2
+      n: 2,
     });
 
     expect(parser('node index.js --number "3" --n "2"'))
     .to.deep.equal({
       number: 3,
-      n: 2
+      n: 2,
     });
 
     expect(parser('node index.js --number="3" --n=2'))
     .to.deep.equal({
       number: 3,
-      n: 2
+      n: 2,
     });
   });
 
   it('parse to string values', function () {
-  	expect(parser('node index.js --test production --env sandbox'))
-  	.to.deep.equal({
+    expect(parser('node index.js --test production --env sandbox'))
+    .to.deep.equal({
       test: 'production',
-      env: 'sandbox'
+      env: 'sandbox',
     });
 
     expect(parser('node index.js --test "production"'))
     .to.deep.equal({
-      test: 'production'
+      test: 'production',
     });
 
     expect(parser('node index.js --test \'production\''))
     .to.deep.equal({
-      test: 'production'
+      test: 'production',
     });
 
     expect(parser('node index.js --test=production'))
     .to.deep.equal({
-      test: 'production'
+      test: 'production',
     });
   });
 }

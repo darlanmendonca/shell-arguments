@@ -1,23 +1,21 @@
-'use strict';
-
 module.exports = parser;
 
 function typeCast(value) {
-	let isNumber = value !== true && !isNaN(value);
-	let isFalse = value === 'false';
-	let isTrue = value === 'true';
+  const isNumber = value !== true && !isNaN(value);
+  const isFalse = value === 'false';
+  const isTrue = value === 'true';
 
   // to number
   value = isNumber
-  	? Number(value)
-  	: value;
+    ? Number(value)
+    : value;
 
   // to boolean
   value = isFalse
-  	? false :
-  	isTrue
-  		? true
-  		: value;
+    ? false :
+    isTrue
+      ? true
+      : value;
 
   return value;
 };
@@ -32,19 +30,18 @@ function setArgs(args) {
 
   return args;
 
-	function removeQuotes(value, index) {
-	  let arg = value.replace(/(\"|\')/g, '');
-	  args[index] = arg;
-	}
+  function removeQuotes(value, index) {
+    const arg = value.replace(/(\"|\')/g, '');
+    args[index] = arg;
+  }
 };
 
-
 function parser(args) {
-  let object = {};
-  let regs = {
+  const object = {};
+  const regs = {
     flag: /--(.+)/,
     flaghWithEqual: /--(.+)=(.+)/,
-    shortFlag: /-(.+)/
+    shortFlag: /-(.+)/,
   };
 
   args = setArgs(args);
@@ -56,13 +53,13 @@ function parser(args) {
     let key;
     let value = true;
 
-    let isLongFlagWithEqual = regs.flaghWithEqual.test(arg);
-    let isLongFlag = regs.flag.test(arg);
-    let isShortFlag = regs.shortFlag.test(arg);
-    let isValue = regs.flag.test(array[index - 1]);
+    const isLongFlagWithEqual = regs.flaghWithEqual.test(arg);
+    const isLongFlag = regs.flag.test(arg);
+    const isShortFlag = regs.shortFlag.test(arg);
+    const isValue = regs.flag.test(array[index - 1]);
 
     if (isLongFlagWithEqual) {
-      let explode = arg.match(regs.flaghWithEqual);
+      const explode = arg.match(regs.flaghWithEqual);
       key = explode[1];
       value = explode[2];
     } else if (isLongFlag) {
@@ -84,9 +81,7 @@ function parser(args) {
         function applyValue(key) {
           object[key] = value;
         }
-      }
-      // if has flag or value of flag
-      else {
+      } else { // if has flag or value of flag
         object[key] = value;
       }
     }
