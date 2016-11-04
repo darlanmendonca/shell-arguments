@@ -1,7 +1,7 @@
 'use strict';
 
 var expect = require('chai').expect;
-var parser = require('../../app/parser.es5.js');
+var parser = require('./parser.es5.js');
 
 describe('parser - unit tests', function () {
   describe('short flags (-f, -abc)', shortFlags);

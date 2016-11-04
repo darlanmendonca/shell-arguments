@@ -1,5 +1,5 @@
 let expect = require('chai').expect;
-let parser = require('../../app/parser.es5.js');
+let parser = require('./parser.es5.js');
 
 describe('parser - unit tests', function() {
   describe('short flags (-f, -abc)', shortFlags);
