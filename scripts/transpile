@@ -3,4 +3,5 @@
 set -e
 
 babel app/parser.js --out-file app/parser.es5.js;
+babel app/index.js --out-file app/index.es5.js;
 babel app/parser.spec.js --out-file app/parser.spec.es5.js;
