@@ -58,19 +58,3 @@ Apply value with =, or space:
 node app.js --output '/Desktop/test' --config="test"
 => {output: '/Desktop/test', config: 'test'}
 ```
-
-
-### Tests
-I use mocha for tests, to run, first install dependencies
-
-```sh
-npm install
-```
-
-Then run tests with:
-
-```sh
-npm test
-```
-
-Enjoy!
