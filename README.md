@@ -15,12 +15,12 @@ npm install --save shell-arguments
 and in your .js file
 
 ```js
-import arguments from 'shell-arguments';
+import args from 'shell-arguments';
 
-console.log(arguments);
+console.log(args);
 ```
 
-now, var arguments, return a object, with your data, example:
+now, var args, return a object, with your data, example:
 
 ```sh
 node app.js -b --test
