@@ -3,7 +3,7 @@
 [![npm version](https://badge.fury.io/js/shell-arguments.svg)](https://badge.fury.io/js/shell-arguments)
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
 
-# shell-arguments
+## shell-arguments
 
 This module serialize the arguments passed to the npm, node, nodemon, forever, or pm2, and convert this arguments to json.
 
