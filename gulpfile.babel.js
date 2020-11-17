@@ -5,7 +5,7 @@ import eslint from 'gulp-eslint';
 const scripts = [
   './app/index.js',
   './app/parser.js',
-  './test/unit/parser.spec.js',
+  './app/parser.spec.js',
   './gulpfile.babel.js',
 ];
 
@@ -18,6 +18,8 @@ gulp.task('lintTask', function lintTask() {
     .on('error', () => gutil.beep());
 });
 
-gulp.task('lint', ['lintTask'], function() {
+gulp.task('watch', function() {
   gulp.watch(scripts, ['lintTask']);
 });
+
+gulp.task('lint', gulp.series('lintTask', 'watch'));
