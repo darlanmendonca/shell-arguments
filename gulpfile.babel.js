@@ -19,7 +19,7 @@ gulp.task('lintTask', function lintTask() {
 });
 
 gulp.task('watch', function() {
-  gulp.watch(scripts, ['lintTask']);
+  gulp.watch(scripts, gulp.series('lintTask'));
 });
 
 gulp.task('lint', gulp.series('lintTask', 'watch'));
