@@ -1,20 +1,19 @@
-'use strict';
+"use strict";
 
 module.exports = parser;
 
 function typeCast(value) {
   var isNumber = value !== true && !isNaN(value);
   var isFalse = value === 'false';
-  var isTrue = value === 'true';
+  var isTrue = value === 'true'; // to number
 
-  // to number
-  value = isNumber ? Number(value) : value;
+  value = isNumber ? Number(value) : value; // to boolean
 
-  // to boolean
   value = isFalse ? false : isTrue ? true : value;
-
   return value;
-};
+}
+
+;
 
 function setArgs(args) {
   // if unit test, receive a args in string
@@ -30,7 +29,9 @@ function setArgs(args) {
     var arg = value.replace(/(\"|\')/g, '');
     args[index] = arg;
   }
-};
+}
+
+;
 
 function parser(args) {
   var object = {};
@@ -39,16 +40,13 @@ function parser(args) {
     flaghWithEqual: /--(.+)=(.+)/,
     shortFlag: /-(.+)/
   };
-
   args = setArgs(args);
   args.forEach(parse);
-
   return object;
 
   function parse(arg, index, array) {
-    var key = void 0;
+    var key;
     var value = true;
-
     var isLongFlagWithEqual = regs.flaghWithEqual.test(arg);
     var isLongFlag = regs.flag.test(arg);
     var isShortFlag = regs.shortFlag.test(arg);
@@ -83,4 +81,6 @@ function parser(args) {
       }
     }
   }
-};
+}
+
+;
